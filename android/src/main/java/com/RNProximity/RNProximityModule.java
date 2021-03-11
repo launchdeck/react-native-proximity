@@ -6,8 +6,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.support.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -34,6 +35,7 @@ public class RNProximityModule extends ReactContextBaseJavaModule implements Sen
 
   public RNProximityModule(ReactApplicationContext reactContext) {
     super(reactContext);
+
     this.reactContext = reactContext;
     mSensorManager = (SensorManager) reactContext.getSystemService(Context.SENSOR_SERVICE);
     mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
